@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>weather Dashboard</title>
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+  <!-- 'defer' tell the browser to wait until the page has finished parsing before executing the script -->
+  <script src ="assets/js/script.js" defer></script>
+</head>
+
+<body>
+  <h1>Weather Dashboard</h1>
+  <div class ="container">
+    <div class ="form-input">
+      <h3> Search for a City</h3>
+      <input class ="city-input" type="text" placeholder = "City">
+      <button type="click" class ="search-btn">Search</button>
+    </div>
+
+<div class=" weather-data">
+  <div class="currentWeather">
+    <div class ="details">
+      <h2 id="City">  (2024-05-04)  </h2> 
+      <h4 id="Temp">Temp: 53'f </h4>
+      <h4 id="Wind">Wind: 12mph</h4>
+      <h4 id="Humidity">Humidity: 90%</h4>
+    </div>
+    <div class ="image">
+      <!-- <img src ="https://openweathermap.org/img/wn/10d@4x.png" alt ="forecast"> -->
+      <h4> Cloudy</h4>
+    </div>
+  </div>
+
+
+  <div class="forecast">
+    <h2>5-Days Forecast</h2>
+    <ul class ="forecast-card">
+     
+      <li class ="card">
+        <h3 id="Date-0">()</h3>
+        <img src ="https://openweathermap.org/img/w/${day.weather[0].icon}.png" alt="forecast"> 
+        <h5 id="Temp-0">Temp: 53'f </h5>
+        <h5 id="Wind-0">Wind: 12mph</h5>
+        <h5 id="Humidity-0">Humidity: 90%</h5>
+      </li>
+
+      <li class ="card">
+        <h3 id="Date-1">()</h3>
+        <!-- <img src ="" alt="forecast"> -->
+        <h5 id="Temp-1">Temp: 53'f </h5>
+        <h5 id="Wind-1">Wind: 12mph</h5>
+        <h5 id="Humidity-1">Humidity: 90%</h5>
+      </li>
+
+      <li class ="card">
+        <h3>()</h3>
+        <!-- <img src ="" alt="forecast"> -->
+        <h5 id="Temp-2">Temp: 53'f </h5>
+        <h5 id="Wind-2">Wind: 12mph</h5>
+        <h5 id="Humidity-2">Humidity: 90%</h5>
+      </li>
+
+      <li class ="card">
+        <h3>()</h3>
+        <!-- <img src ="" alt="forecast"> -->
+        <h5 id="Temp">Temp: 53'f </h5>
+        <h5 id="Wind">Wind: 12mph</h5>
+        <h5 id="Humidity">Humidity: 90%</h5>
+      </li>
+
+      <li class ="card">
+        <h3>()</h3>
+        <!-- <img src ="" alt="forecast"> -->
+        <h5 id="Temp">Temp: 53'f </h5>
+        <h5 id="Wind">Wind: 12mph</h5>
+        <h5 id="Humidity">Humidity: 90%</h5>
+      </li>
+    </ul>
+  </div>
+</div>
+  </div>
+  
+</body>
+</html>
