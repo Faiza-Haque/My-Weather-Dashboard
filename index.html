@@ -17,7 +17,13 @@
       <h3> Search for a City</h3>
       <input class ="city-input" type="text" placeholder = "City">
       <button type="click" class ="search-btn">Search</button>
+      <hr/>
+      <div id="search-history">
+
+
+      </div>
     </div>
+  
 
 <div class=" weather-data">
   <div class="currentWeather">
@@ -39,48 +45,54 @@
     <ul class ="forecast-card">
      
       <li class ="card">
-        <h3 id="Date-0">()</h3>
-        <img src ="https://openweathermap.org/img/w/${day.weather[0].icon}.png" alt="forecast"> 
-        <h5 id="Temp-0">Temp: 53'f </h5>
-        <h5 id="Wind-0">Wind: 12mph</h5>
-        <h5 id="Humidity-0">Humidity: 90%</h5>
+        <h4 id="Date-0"></h4>
+        <img id="Icon-0" src ="https://openweathermap.org/img/w/01d.png" alt="forecast"> 
+        <h5 id="Temp-0"></h5>
+        <h5 id="Wind-0"></h5>
+        <h5 id="Humidity-0"></h5>
       </li>
 
       <li class ="card">
-        <h3 id="Date-1">()</h3>
+        <h4 id="Date-1"></h4>
+        <img id="Icon-1" src ="https://openweathermap.org/img/w/01d.png" alt="forecast"> 
         <!-- <img src ="" alt="forecast"> -->
-        <h5 id="Temp-1">Temp: 53'f </h5>
-        <h5 id="Wind-1">Wind: 12mph</h5>
-        <h5 id="Humidity-1">Humidity: 90%</h5>
+        <h5 id="Temp-1"></h5>
+        <h5 id="Wind-1"></h5>
+        <h5 id="Humidity-1"></h5>
       </li>
 
       <li class ="card">
-        <h3>()</h3>
+        <h4 id="Date-2"></h4>
+        <img id="Icon-2" src ="https://openweathermap.org/img/w/01d.png" alt="forecast"> 
         <!-- <img src ="" alt="forecast"> -->
-        <h5 id="Temp-2">Temp: 53'f </h5>
-        <h5 id="Wind-2">Wind: 12mph</h5>
-        <h5 id="Humidity-2">Humidity: 90%</h5>
+        <h5 id="Temp-2"></h5>
+        <h5 id="Wind-2"></h5>
+        <h5 id="Humidity-2"></h5>
       </li>
 
       <li class ="card">
-        <h3>()</h3>
+        <h4 id="Date-3"></h4>
+        <img id="Icon-3" src ="https://openweathermap.org/img/w/01d.png" alt="forecast"> 
         <!-- <img src ="" alt="forecast"> -->
-        <h5 id="Temp">Temp: 53'f </h5>
-        <h5 id="Wind">Wind: 12mph</h5>
-        <h5 id="Humidity">Humidity: 90%</h5>
+        <h5 id="Temp-3"></h5>
+        <h5 id="Wind-3"></h5>
+        <h5 id="Humidity-3"></h5>
       </li>
 
       <li class ="card">
-        <h3>()</h3>
+        <h4 id="Date-4"></h4>
+        <img id="Icon-4" src ="https://openweathermap.org/img/w/01d.png" alt="forecast"> 
         <!-- <img src ="" alt="forecast"> -->
-        <h5 id="Temp">Temp: 53'f </h5>
-        <h5 id="Wind">Wind: 12mph</h5>
-        <h5 id="Humidity">Humidity: 90%</h5>
+        <h5 id="Temp-4"></h5>
+        <h5 id="Wind-4"></h5>
+        <h5 id="Humidity-4"></h5>
       </li>
     </ul>
   </div>
 </div>
   </div>
   
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.11/dayjs.min.js" integrity="sha512-FwNWaxyfy2XlEINoSnZh1JQ5TRRtGow0D6XcmAWmYCRgvqOUTnzCxPc9uF35u5ZEpirk1uhlPVA19tflhvnW1g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 </html>

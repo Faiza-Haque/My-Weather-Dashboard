@@ -60,8 +60,9 @@ h1 {
 
 .forecast-card {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    flex-wrap: nowrap;
+    /* flex-wrap: wrap; */
+    /* justify-content: space-between; */
 }
 
 .forecast-card .card {
@@ -70,7 +71,10 @@ h1 {
     padding: 18px 16px;
     border-radius: 5px;
     background: var(--dark);
-    width: auto;
+    width: 18%;
+    margin-left: 2px;
+    margin-right: 2px;
+    /* width: auto; */
 
 }
 
@@ -131,7 +135,7 @@ h1 {
         padding: 20px;
     }
     .forecast-card{
-        flex-wrap:wrap;
+        /* flex-wrap:wrap; */
     }
     .forecast-card .card {
         width: calc(100%/4 - 15px);

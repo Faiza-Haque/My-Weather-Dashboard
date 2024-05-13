@@ -8,6 +8,7 @@ const Temph4 = document.querySelector("#Temp")
 const Windh4 = document.querySelector("#Wind")
 const Humidityh4 = document.querySelector("#Humidity")
 
+const searchHistoryDiv = document.querySelector("#search-history")
 
 function getCurrentWeather() {
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityInput.value}&appid=${API_Key}&units=imperial`)
@@ -40,16 +41,19 @@ function getForecastWeather() {
 
         for(i = 0; i < selectedData.length; i++) {
             const dateH3 = document.querySelector(`#Date-${i}`);
-            //const icon = document.querySelector(`#Icon-${i}`);`https://openweathermap.org/img/w/${day.weather[0].icon}.png`);
+            const iconImg = document.querySelector(`#Icon-${i}`);
+
             const TempH5 = document.querySelector(`#Temp-${i}`);
             const HumidityH5 = document.querySelector(`#Humidity-${i}`);
             const WindH5 = document.querySelector(`#Wind-${i}`);
 
-            dateH3.textContent = selectedData[0].dt_txt;
+            dateH3.textContent = dayjs(selectedData[i].dt * 1000).format("MM/DD/YYYY");
+
+            iconImg.src =`https://openweathermap.org/img/w/${selectedData[i].weather[0].icon}.png`;
             //icon.textContent = selectedData[i].dt_txt
-            TempH5.textContent = selectedData[i].main.temp;
-            HumidityH5.textContent = selectedData[i].main.humidity;
-            WindH5.textContent = selectedData[i].wind.speed;
+            TempH5.textContent = `Temp: ${selectedData[i].main.temp}`;
+            HumidityH5.textContent = `Humidity: ${selectedData[i].main.humidity}`;
+            WindH5.textContent = `Wind Speed: ${selectedData[i].wind.speed}`
         }
 
 
@@ -64,22 +68,36 @@ searchButton.addEventListener("click", function () {
     getCurrentWeather();
     getForecastWeather()
 
+    const citiesArr = JSON.parse(localStorage.getItem('Cityh2'));
+    citiesArr.push(cityInput.value);
 
-
-
-    
+    localStorage.setItem('Cityh2', JSON.stringify(citiesArr));  
 })
-// create a click button that gives the list of cities
-//const searchButton = function (event){
-//event.preventDefault(); 
-//const Cityh2 = event.target.id; 
-//console.log("Cityh2: ", Cityh2);
-//getCurrentWeather( Cityh2);
-localStorage.setItem('Cityh2', JSON.stringify(cityInput));
 
 
-//};
-//cityInput.addEventListener("click", searchButton);
- 
+const savedCities = JSON.parse(localStorage.getItem('Cityh2'));
+//                      0            1             2
+
+for(i = 0; i < savedCities.length; i++) {
+    let citiesBtn = document.createElement("button");
+    citiesBtn.textContent = savedCities[i];
+    citiesBtn.addEventListener("click", function(event) {
+
+        console.log(event.target.textContent)
+
+        cityInput.value = event.target.textContent
+        getCurrentWeather();
+        // https://api.openweathermap.org/data/2.5/forecast?q=&appid=4df3041d75d070a2b702feea67f93a6c&units=imperial
+        getForecastWeather()
+
+
+    })
+
+    searchHistoryDiv.append(citiesBtn);
+}
+
+// <button>New York</button>
+
+
 
 
