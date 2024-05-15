@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,92 +8,95 @@
   <title>Weather Dashboard</title>
   <link rel="stylesheet" href="./assets/css/styles.css" />
   <!-- 'defer' tell the browser to wait until the page has finished parsing before executing the script -->
-  <script src ="assets/js/script.js" defer></script>
+  <script src="assets/js/script.js" defer></script>
 </head>
 
 <body>
   <h1>Weather Dashboard</h1>
-  <div class ="container">
-    <div class ="form-input">
+  <div class="container">
+    <div class="form-input">
       <h3> Search for a City</h3>
-      <input class ="city-input" type="text" placeholder = "City">
-      <button type="click" class ="search-btn">Search</button>
-      <hr/>
+      <input class="city-input" type="text" placeholder="City">
+      <button type="click" class="search-btn">Search</button>
+      <hr />
       <div id="search-history">
 
 
       </div>
     </div>
-  
 
-<div class=" weather-data">
-  <div class="currentWeather">
-    <div class ="details">
-      <h2 id="City">  (2024-05-04)  </h2> 
-      <h4 id="Temp">Temp: 53'f </h4>
-      <h4 id="Wind">Wind: 12mph</h4>
-      <h4 id="Humidity">Humidity: 90%</h4>
+
+    <div class=" weather-data">
+      <div class="currentWeather">
+        <div class="details">
+          <h2 id="City"> (2024-05-04) </h2>
+          <div id="Icon"> </div>
+          <h4 id="Temp">Temp: 53'f </h4>
+          <h4 id="Wind">Wind: 12mph</h4>
+          <h4 id="Humidity">Humidity: 90%</h4>
+        </div>
+        <div class="image">
+          <!-- <img  src ="https://openweathermap.org/img/wn/10d@4x.png" alt ="forecast"> -->
+        </div>
+      </div>
+
+
+      <div class="forecast">
+        <h2>5-Days Forecast</h2>
+        <ul class="forecast-card">
+
+          <li class="card">
+            <h4 id="Date-0"></h4>
+            <div id="Icon-0"> </div>
+            <h5 id="Temp-0"></h5>
+            <h5 id="Wind-0"></h5>
+            <h5 id="Humidity-0"></h5>
+          </li>
+
+          <li class="card">
+            <h4 id="Date-1"></h4>
+            <div id="Icon-1"></div>
+            <!-- <img src ="" alt="forecast"> -->
+            <h5 id="Temp-1"></h5>
+            <h5 id="Wind-1"></h5>
+            <h5 id="Humidity-1"></h5>
+          </li>
+
+          <li class="card">
+            <h4 id="Date-2"></h4>
+            <div id="Icon-2"> </div>
+            <!-- <img src ="" alt="forecast"> -->
+            <h5 id="Temp-2"></h5>
+            <h5 id="Wind-2"></h5>
+            <h5 id="Humidity-2"></h5>
+          </li>
+
+          <li class="card">
+            <h4 id="Date-3"></h4>
+            <div id="Icon-3"> </div>
+            <!-- <img src ="" alt="forecast"> -->
+            <h5 id="Temp-3"></h5>
+            <h5 id="Wind-3"></h5>
+            <h5 id="Humidity-3"></h5>
+          </li>
+
+          <li class="card">
+            <h4 id="Date-4"></h4>
+            <div id="Icon-4"> </div>
+            <!-- <img src ="" alt="forecast"> -->
+            <h5 id="Temp-4"></h5>
+            <h5 id="Wind-4"></h5>
+            <h5 id="Humidity-4"></h5>
+          </li>
+        </ul>
+      </div>
     </div>
-    <div class ="image">
-      <!-- <img  src ="https://openweathermap.org/img/wn/10d@4x.png" alt ="forecast"> -->
-      <h4> Cloudy</h4>
-    </div>
   </div>
 
 
-  <div class="forecast">
-    <h2>5-Days Forecast</h2>
-    <ul class ="forecast-card">
-     
-      <li class ="card">
-        <h4 id="Date-0"></h4>
-        <div id="Icon-0" > </div>
-        <h5 id="Temp-0"></h5>
-        <h5 id="Wind-0"></h5>
-        <h5 id="Humidity-0"></h5>
-      </li>
-
-      <li class ="card">
-        <h4 id="Date-1"></h4>
-        <div id="Icon-1" ></div> 
-        <!-- <img src ="" alt="forecast"> -->
-        <h5 id="Temp-1"></h5>
-        <h5 id="Wind-1"></h5>
-        <h5 id="Humidity-1"></h5>
-      </li>
-
-      <li class ="card">
-        <h4 id="Date-2"></h4>
-        <div id="Icon-2" > </div> 
-        <!-- <img src ="" alt="forecast"> -->
-        <h5 id="Temp-2"></h5>
-        <h5 id="Wind-2"></h5>
-        <h5 id="Humidity-2"></h5>
-      </li>
-
-      <li class ="card">
-        <h4 id="Date-3"></h4>
-        <div id="Icon-3" > </div> 
-        <!-- <img src ="" alt="forecast"> -->
-        <h5 id="Temp-3"></h5>
-        <h5 id="Wind-3"></h5>
-        <h5 id="Humidity-3"></h5>
-      </li>
-
-      <li class ="card">
-        <h4 id="Date-4"></h4>
-        <div id="Icon-4" > </div>
-        <!-- <img src ="" alt="forecast"> -->
-        <h5 id="Temp-4"></h5>
-        <h5 id="Wind-4"></h5>
-        <h5 id="Humidity-4"></h5>
-      </li>
-    </ul>
-  </div>
-</div>
-  </div>
-  
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.11/dayjs.min.js" integrity="sha512-FwNWaxyfy2XlEINoSnZh1JQ5TRRtGow0D6XcmAWmYCRgvqOUTnzCxPc9uF35u5ZEpirk1uhlPVA19tflhvnW1g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.11/dayjs.min.js"
+    integrity="sha512-FwNWaxyfy2XlEINoSnZh1JQ5TRRtGow0D6XcmAWmYCRgvqOUTnzCxPc9uF35u5ZEpirk1uhlPVA19tflhvnW1g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
+
 </html>
