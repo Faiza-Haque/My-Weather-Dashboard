@@ -8,6 +8,7 @@ const Temph4 = document.querySelector("#Temp")
 const Windh4 = document.querySelector("#Wind")
 const Humidityh4 = document.querySelector("#Humidity")
 const firstIcondiv = document.querySelector("#Icon")
+const Dateh4 = document.querySelector("#Today-Date")
 
 const searchHistoryDiv = document.querySelector("#search-history")
 
@@ -18,6 +19,7 @@ function getCurrentWeather() {
             console.log(data)
             Cityh2.textContent = data.name
             Temph4.textContent = `Temp: ${data.main.temp}`;
+        Dateh4.textContent= dayjs(data.dt * 1000).format("MM/DD/YYYY");
             Windh4.textContent = `Wind: ${data.wind.speed}`;
             Humidityh4.textContent = `Humidity: ${data.main.humidity}`;
             const iconImg = document.createElement("img");
