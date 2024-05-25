@@ -11,7 +11,7 @@ const firstIcondiv = document.querySelector("#Icon")
 const Dateh4 = document.querySelector("#Today-Date")
 
 const searchHistoryDiv = document.querySelector("#search-history")
-
+// Function to get current weather data from the API
 function getCurrentWeather() {
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityInput.value}&appid=${API_Key}&units=imperial`)
         .then(res => res.json())
@@ -29,7 +29,7 @@ function getCurrentWeather() {
             iconImg.src = `https://openweathermap.org/img/w/${data.weather[0].icon}.png`;
         })
 }
-
+// Function to get forecast data from the API
 function getForecastWeather() {
     fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${cityInput.value}&appid=${API_Key}&units=imperial`)
         .then(res => res.json())
@@ -82,7 +82,7 @@ searchButton.addEventListener("click", function () {
     loadSearchhistory()
 })
 // invoke a function
-
+// Function to load the search history
 function loadSearchhistory() {
     const savedCities = JSON.parse(localStorage.getItem('Cityh2')) || [];
     //                      0            1             2
