@@ -19,7 +19,7 @@ function getCurrentWeather() {
             console.log(data)
             Cityh2.textContent = data.name
             Temph4.textContent = `Temp: ${data.main.temp}`;
-        Dateh4.textContent= dayjs(data.dt * 1000).format("MM/DD/YYYY");
+            Dateh4.textContent = dayjs(data.dt * 1000).format("MM/DD/YYYY");
             Windh4.textContent = `Wind: ${data.wind.speed}`;
             Humidityh4.textContent = `Humidity: ${data.main.humidity}`;
             const iconImg = document.createElement("img");
@@ -86,28 +86,33 @@ searchButton.addEventListener("click", function () {
 function loadSearchhistory() {
     const savedCities = JSON.parse(localStorage.getItem('Cityh2')) || [];
     //                      0            1             2
-    searchHistoryDiv.innerHTML = ""
-
-    for (i = 0; i < savedCities.length; i++) {
-        let citiesBtn = document.createElement("button");
-        citiesBtn.textContent = savedCities[i];
-        citiesBtn.addEventListener("click", function (event) {
-
-            console.log(event.target.textContent)
-
-            cityInput.value = event.target.textContent
-            getCurrentWeather();
-            // https://api.openweathermap.org/data/2.5/forecast?q=&appid=4df3041d75d070a2b702feea67f93a6c&units=imperial
-            getForecastWeather()
+    if (savedCities) {
 
 
-        })
 
-        searchHistoryDiv.append(citiesBtn);
+        searchHistoryDiv.innerHTML = ""
+
+        for (i = 0; i < savedCities.length; i++) {
+            let citiesBtn = document.createElement("button");
+            citiesBtn.textContent = savedCities[i];
+            citiesBtn.addEventListener("click", function (event) {
+
+                console.log(event.target.textContent)
+
+                cityInput.value = event.target.textContent
+                searchButton.click()
+
+                // https://api.openweathermap.org/data/2.5/forecast?q=&appid=4df3041d75d070a2b702feea67f93a6c&units=imperial
+
+
+            })
+
+            searchHistoryDiv.append(citiesBtn);
+        }
+
+        console.log(savedCities)
+        getCurrentWeather(savedCities[0]);
+        getForecastWeather(savedCities[0])
     }
-
 }
 loadSearchhistory()
-
-
-
